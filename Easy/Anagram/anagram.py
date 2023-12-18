@@ -7,7 +7,6 @@ class Solution:
     def isAnagram(self,a,b):
         #code here
         dict1 = {}
-        dict2 = {}
         for i in a:
             if i in dict1:
                 dict1[i]+=1
