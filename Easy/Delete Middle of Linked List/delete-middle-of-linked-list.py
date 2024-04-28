@@ -14,16 +14,26 @@ class Solution:
         '''
         
         #code here
-        s = head
-        f = head
-        while f.next and f.next.next:
-            s = s.next
-            f = f.next.next
-           
-        if f.next==None:
-            s.data = s.next.data
-        s.next = s.next.next
+        if head.next is None:
+            return None
+        fast=slow=head
+        while fast and fast.next and fast.next.next and fast.next.next.next:
+            fast=fast.next.next
+            slow=slow.next
+        slow.next=slow.next.next
         return head
+        
+        
+        # s = head
+        # f = head
+        # while f.next and f.next.next:
+        #     s = s.next
+        #     f = f.next.next
+           
+        # if f.next==None:
+        #     s.data = s.next.data
+        # s.next = s.next.next
+        # return head
             
         
     
